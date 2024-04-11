@@ -3,7 +3,8 @@ import itertools
 
 stacks = [1000, 500, 499, 10, 5, 4, 3, 2, 1,]
 payouts = np.array([2000, 800, 400, 100, 50, 0, 0, 0, 0])
-
+stacks = [1000, 200, 100, 390, 72, 50, 30, 20, 10]
+payouts = np.array([2000, 800, 400, 100, 50, 0, 0, 0, 0])
 
 class ICMSolver:
     def __init__(self, stacks, payouts = None):
@@ -60,7 +61,7 @@ class RP:
         # losing matrix = b
         b = np.zeros((len(self.stacks), len(self.stacks)))
         for i in range(a.shape[0]):
-            print(f"player {i}'s turn")
+            # print(f"player {i}'s turn")
             for j in range(a.shape[1]):
                 new_stacks = self.stacks.copy()
                 # print("player {} shoves, player {} calls".format(i, j))
@@ -95,7 +96,8 @@ stacks = stacks
 payouts = payouts
 icm_solver = ICMSolver(stacks, payouts)
 
-print(icm_solver.icm_values)
+# print(icm_solver.prob_matrix)
+# print(icm_solver.icm_values)
 
 rp_instance = RP(stacks, payouts)
 win_matrix = rp_instance.win_matrix

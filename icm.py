@@ -135,7 +135,7 @@ def calc_prob_matrix(stacks):
     prob_matrix = np.zeros((len(stacks), len(stacks)))
     total = sum(stacks)
     stack_orderings = make_perms(stacks)
-
+    
     for j in range(prob_matrix.shape[1]):
         for i in range(prob_matrix.shape[0]):
             cutted_perms = cut_perms(stack_orderings[i], j, len(stacks))
